@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: #333;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 28px;
+        }
+        .question {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        .image-container {
+            margin: 20px 0;
+        }
+        .image-container img {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #yesBtn {
+            background-color: #ff69b4;
+            color: white;
+        }
+        #yesBtn:hover {
+            background-color: #ff1493;
+        }
+        #noBtn {
+            background-color: #ddd;
+        }
+        #noBtn:hover {
+            background-color: #bbb;
+        }
+        #ticket {
+            display: none;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>For My Love ❤️</h1>
+    <p class="question">Are you ready for a fun little game? 😊</p>
+
+    <div class="image-container">
+        <img id="questionImage" src="https://i.pinimg.com/originals/5e/45/82/5e4582bffbd34423ae68c17d69ef338f.jpg" alt="Cute Couple">
+    </div>
+
+    <div class="buttons">
+        <button id="yesBtn">Yes! 💖</button>
+        <button id="noBtn">No 😢</button>
+    </div>
+
+    <div id="ticket">
+        <h2>Yay! 🎉 Message me for your flight ticket for June! ✈️💑</h2>
+    </div>
+
+    <script>
+        const questions = [
+            { text: "Are you ready for a fun little game? 😊", img: "https://drive.google.com/file/d/1yOhh6KLIZRXLHZ1z7_ODJt9BVTd3_ujm/view?usp=drive_link" },
+            { text: "Do you promise to always be my best friend? 💕", img: "https://drive.google.com/file/d/1hWu5wj42JPLm0Xw161_3PIlOJV5QbEsI/view?usp=drive_link" },
+            { text: "Will you laugh at my silly jokes even when they're bad?* Kahit madalas kang pikon 😂", img: "https://drive.google.com/file/d/1FUl_o4EbQHNqhlxBgub6RZKQTICUjRLH/view?usp=sharing" },
+            { text: "Will you be my forever adventure buddy? Kahit mas preferred nating nasa bahay lang?* 🌎", img: "https://drive.google.com/file/d/1C1_y5vgu_obxXJvTvI-Nrl_xa9h5QqUB/view?usp=drive_link" },
+            { text: "Do you believe in soulmates? Because I do, and you're mine. *Palagi 💫", img: "https://drive.google.com/file/d/1STBmH9TcbvmGR_ZvKn34sTUalkRezUKA/view?usp=drive_link" },
+            { text: "Will you keep stealing my hoodies forever? 🧥❤️", img: "https://drive.google.com/file/d/1CN1iiY0o2FrBY52tHL15-K-PQNNM5YvN/view?usp=drive_link" },
+            { text: "Will you let me be your favorite person, always? 🥰", img: "https://drive.google.com/file/d/1QSnXheayvSB8on4g_TJH806jEOn3Kilj/view?usp=drive_link" },
+            { text: "Are you excited for all the memories we'll make? 📸", img: "https://drive.google.com/file/d/1_1_ounph5cxqnv7HJnWVSXQaBxGH3sOP/view?usp=sharing" },
+            { text: "Are you ready to spend forever with me? 💍", img: "https://drive.google.com/file/d/1hWu5wj42JPLm0Xw161_3PIlOJV5QbEsI/view?usp=drive_link" },
+            { text: "One last question… want to see something special? ✈️", img: "https://drive.google.com/file/d/1yOhh6KLIZRXLHZ1z7_ODJt9BVTd3_ujm/view?usp=drive_link" }
+        ];
+
+        let questionIndex = 0;
+        const questionElement = document.querySelector(".question");
+        const questionImage = document.getElementById("questionImage");
+        const yesBtn = document.getElementById("yesBtn");
+        const noBtn = document.getElementById("noBtn");
+        const buttonsDiv = document.querySelector(".buttons");
+        const ticketDiv = document.getElementById("ticket");
+
+        yesBtn.addEventListener("click", function() {
+            questionIndex++;
+            if (questionIndex < questions.length) {
+                questionElement.innerText = questions[questionIndex].text;
+                questionImage.src = questions[questionIndex].img;
+            } else {
+                questionElement.innerText = "Yay! I can’t wait to spend forever with you! ❤️";
+                questionImage.src = "https://i.pinimg.com/originals/23/32/cc/2332cc472ca31cf62cb15ea354a34b0c.jpg";
+                buttonsDiv.style.display = "none";
+                ticketDiv.style.display = "block";
+            }
+        });
+
+        noBtn.addEventListener("click", function() {
+            alert("Wait, think again! Imagine all the adventures we'll have together! 🥺💞");
+        });
+    </script>
+
+</body>
+</html>
